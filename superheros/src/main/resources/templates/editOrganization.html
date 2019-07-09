@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"
+            xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <title>Super Hero</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1><center>Report Sighting Of Your Favorite Hero or Villain</center></h1>
+            <hr/>
+           
+             <div class="navbar">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link active" href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link" href="sighting">
+                            Report A Sighting
+                        </a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link" href="hero">
+                            Hero Page
+                        </a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link" href="location">
+                            Locations Page
+                        </a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link" href="organization">
+                            Organization Page
+                        </a>
+                    </li>
+                   
+                </ul>    
+            </div>
+            <br/>
+                  <div class="row m-4 border border-dark">
+                <div class="col-3 text-center m-3">
+                    <span class="h3">Edit Organization</span>
+                </div>
+                <div class="col-7 text-center m-3">
+                    <form action="editOrganization" method="POST">
+                        <div class="form-group row">
+                            <label for="name" class="col-3 col-form-label">
+                                Organization Name</label>
+                            <div class="col-9">
+                                <input type="text" name="name" id="name" 
+                                       class="form-control" th:value="${organization.name}"/>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group row">
+                            <label for="description" class="col-3 col-form-label">
+                                Description</label>
+                            <div class="col-9">
+                                <input type="text" name="description" id="description" 
+                                       class="form-control" th:value="${organization.description}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="contact" class="col-3 col-form-label">
+                                Contact Info</label>
+                            <div class="col-9">
+                                <input type="text" name="contact" id="contact" 
+                                       class="form-control" th:value="${organization.contact}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="heros" class="col-3 col-form-label">
+                                Heros</label>
+                            <div class="col-9">
+                                <select multiple id="heros" name="heroid" class="form-control">
+                                  <option th:each="hero : ${heros}"
+                                          th:value="${hero.id}"
+                                          th:text="${hero.name}">Hero Name</option>
+                              </select>
+                                
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" th:value="${organization.id}"/>
+                        <button type="submit" class="btn btn-primary">
+                            Update Organization</button>
+                    </form>
+                </div>
+            </div>
+            
+          
+        </div>
+               
+           
+
+            
+                        
+             
+        
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

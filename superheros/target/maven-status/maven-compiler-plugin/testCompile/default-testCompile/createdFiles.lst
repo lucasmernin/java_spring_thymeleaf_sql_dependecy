@@ -1,0 +1,5 @@
+com\sg\superheros\dao\SightingDaoTest.class
+com\sg\superheros\dao\OrganizationDaoTest.class
+com\sg\superheros\dao\HeroDaoTest.class
+com\sg\superheros\SuperherosApplicationTests.class
+com\sg\superheros\dao\LocationDaoTest.class
