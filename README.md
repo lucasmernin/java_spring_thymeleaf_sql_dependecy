@@ -18,7 +18,7 @@ Technologies used:
   
   To run program:
 
-Download jar file (java_spring_thymeleaf_sql_dependency/target/Superheros-1.0-SNAPSHOT.jar)
+Download jar file (java_spring_thymeleaf_sql_dependency/target/superheros-1.0-SNAPSHOT.jar)
 
-Terminal command: java -jar Superheros-1.0-SNAPSHOT.jar
+Terminal command: java -jar superheros-1.0-SNAPSHOT.jar
   
